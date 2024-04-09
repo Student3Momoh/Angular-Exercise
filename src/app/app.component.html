@@ -1,0 +1,54 @@
+<h1>{{ name }}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <label>Name</label>
+      <input type="text" class="form-control" [(ngModel)]="name" [disabled]="showButtonEnable">
+
+      <button class="btn btn-success" *ngIf="showButtonEnable" (click)="toggleButtons()">Enable</button>
+      <button class="btn btn-danger" *ngIf="!showButtonEnable" (click)="toggleButtons()">Disable</button>
+
+    </div>
+  </div>
+  <br>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Football Clubs</h1>
+      <a *ngFor="let clubs of FootballCulbs"><li>{{ clubs.name }}</li>
+<!--      <a href="#" class="list-group-item clearfix"-->
+<!--         *ngFor="let clubs of FootballCulbs">-->
+
+      </a>
+    </div>
+  </div>
+  <hr>
+  <h3>Football Teams</h3>
+  <ul>
+    <li *ngFor="let clubs of Team">{{clubs}}</li>
+  </ul>
+
+  <hr>
+
+  <label>Num1</label>
+  <div class="mb-3"><input type="number" class="form-control float-left w-auto" [(ngModel)]="num1"></div>
+  <label>Num2</label>
+  <div class="mb-3"><input type="number" class="form-control float-right w-auto" [(ngModel)]="num2"></div>
+
+  <div class="button-container">
+    <button class="btn btn-outline-primary mb-3" (click)="addSum()">SUM +</button>
+
+    <p>the Sum is {{sum}}</p>
+    <button class="btn btn-outline-primary mb-3" (click)="minSub()">SUB -</button>
+    <br>
+    <button class="btn btn-outline-primary mb-3" (click)="addMulti()">MULT *</button>
+    <p>the Multiple is {{multi}}</p>
+    <button class="btn btn-outline-primary mb-3" (click)="addDiv()">DIV /</button>
+    <p>the Division is {{div}}</p>
+
+    <br><br>
+    <h4>Result = {{ result}}</h4>
+  </div>
+
+</div>
+
